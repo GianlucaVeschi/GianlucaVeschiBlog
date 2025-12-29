@@ -20,7 +20,21 @@ In GitHub:
 - Go to **Settings → Pages**
 - Under **Build and deployment**, set **Source** to **GitHub Actions**
 
-Your site will be available at:
+### Custom domain
+
+This repo includes a `CNAME` file for:
+
+`www.gianlucaveschi.com`
+
+In your DNS (GoDaddy), set:
+
+- **CNAME**: `www` → `GianlucaVeschi.github.io`
+
+Then in **Settings → Pages → Custom domain**, set it to `www.gianlucaveschi.com` and enable **Enforce HTTPS**.
+
+### Default URL (without custom domain)
+
+Your site will also be available at:
 
 `https://GianlucaVeschi.github.io/GianlucaVeschiBlog/`
 

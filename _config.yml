@@ -1,9 +1,8 @@
 title: Gianluca Veschi
 description: Reflections on software, personal growth, and life.
-# For GitHub Pages "Project site" deployment at:
-#   https://GianlucaVeschi.github.io/GianlucaVeschiBlog/
-url: "https://GianlucaVeschi.github.io"
-baseurl: "/GianlucaVeschiBlog"
+# Production domain (GitHub Pages custom domain)
+url: "https://www.gianlucaveschi.com"
+baseurl: ""
 timezone: Europe/Rome
 
 # Build
