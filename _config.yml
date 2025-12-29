@@ -1,0 +1,47 @@
+title: Gianluca Veschi
+description: Reflections on software, personal growth, and life.
+url: "https://example.com" # replace with your domain, e.g. https://gianlucaveschi.com
+timezone: Europe/Rome
+
+# Build
+markdown: kramdown
+permalink: /:categories/:title/
+paginate: 10
+paginate_path: "/posts/page:num/"
+
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      author: Gianluca Veschi
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page
+
+# Plugins supported by GitHub Pages
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+
+exclude:
+  - vendor
+  - .bundle
+  - .sass-cache
+  - .jekyll-cache
+  - _site
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - scripts
+
+
