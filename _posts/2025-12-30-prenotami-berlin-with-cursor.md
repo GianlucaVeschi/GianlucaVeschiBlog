@@ -4,7 +4,37 @@ date: 2025-12-30 09:00:00 +0100
 tags: [automation, selenium, python]
 ---
 
-I shipped a small side project called **PrenotamiBerlin**: a bot that helps me grab an appointment slot on `prenotami.esteri.it` right when new availability drops (for Berlin, that’s **7:00 AM**).
+### Introduction (Skip me if you just want the nerd stuff)
+
+On a trip to Hong Kong In 2023 I decided to go for a solo walk in the outskirts of the Hill Kwun Yam Buddhist Temple. It was a beatiful day to explore the jungle around the city, and apparently also a very good one to lose my wallet.
+
+I have looked for it everywhere, and considering that Hong Kong has one of the [lowest crime rate of the world](https://www.macrotrends.net/global-metrics/countries/hkg/hong-kong/crime-rate-statistics), I excluded the fact that someone had stolen it from me. 
+
+Most of my cards and my Italian ID were gone, but luckily I still had my passport and a Revolut card in my backpack, so I could keep roaming around in Asia for a few more weeks.
+
+As soon as I arrived in Italy, I booked an appointment to renew my ID card, and since my official residency is in Berlin, I could only get a "Paper ID Card". Something that looks like straight from the 80s.
+
+I liked having it around me and having the occasional foreigner laughing at me for the looks of it, but Italy has recently introduced a law for which we all have to get a digital ID card, and for me, this meant booking an appointment at the embassy of Berlin to book a renewal. 
+
+How complicated can it be? Well.... Good luck.
+
+I tried to book an appointment through the Embassy's website and for some reason I could not find any available booking. So I decided to send them an email, and this was their response
+
+![Embassy Response](/assets/posts/prenotami-berlin/risposta_ambasciata.png)
+
+If you speak Italian, I challenge you to understand their message. If you don't, don't even bother trying to translate it. No LLM can yet understand this intricated bureacratic jargon.
+
+After reading their Message a couple of times, I understood that 
+- You can book a slot between the 2nd and the 8th week from today (yes, wtf)
+- The embassy's booking system refreshes every day at 7AM
+- Every time the system refreshes, they open for one more day (If it's a working day)
+- Your best chance to get a slot is to wake up at 6AM something and try it as soon as it's ready.
+
+There is no way on earth I am waking up so early for this, So I thought to myself that there must be another way
+
+### Nerd Stuff
+
+ I shipped a small side project called **PrenotamiBerlin**: a bot that helps me grab an appointment slot on `prenotami.esteri.it` right when new availability drops (for Berlin, that’s **7:00 AM**).
 
 The fun part: I built it *fast* with **Cursor** by iterating in tight loops—write intent, generate code, run it, inspect screenshots/logs, fix the selectors, repeat.
 
