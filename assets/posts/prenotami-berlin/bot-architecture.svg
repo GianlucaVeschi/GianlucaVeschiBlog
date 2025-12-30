@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-label="Prenotami bot architecture: scheduler triggers bot, bot uses selenium, writes logs and screenshots, optional notifications">
+  <defs>
+    <style>
+      .bg{fill:#0b1220}
+      .card{fill:#0f1a2f;stroke:#1f2a44;stroke-width:2}
+      .txt{fill:#e5e7eb;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+      .muted{fill:#9ca3af}
+      .accent{fill:#60a5fa}
+      .stroke{stroke:#60a5fa;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .pill{fill:#111c33;stroke:#2b3a5d;stroke-width:2}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#60a5fa"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="620" rx="18"/>
+  <text class="txt" x="60" y="78" font-size="34" font-weight="700">PrenotamiBerlin: rough architecture</text>
+  <text class="muted" x="60" y="112" font-size="18">A small automation loop: schedule → run → observe → notify.</text>
+
+  <!-- Scheduler -->
+  <rect class="card" x="80" y="170" width="320" height="160" rx="16"/>
+  <text class="txt" x="115" y="215" font-size="22" font-weight="700">Scheduler</text>
+  <text class="muted" x="115" y="245" font-size="16">Runs at 07:00 (daily)</text>
+  <rect class="pill" x="115" y="265" width="250" height="44" rx="22"/>
+  <text class="txt" x="135" y="293" font-size="16">schedule / cron</text>
+
+  <!-- Bot -->
+  <rect class="card" x="460" y="150" width="380" height="200" rx="16"/>
+  <text class="txt" x="495" y="200" font-size="22" font-weight="700">prenotami_bot.py</text>
+  <text class="muted" x="495" y="232" font-size="16">login → Prenota → PRENOTA → check slots</text>
+  <rect class="pill" x="495" y="255" width="310" height="44" rx="22"/>
+  <text class="txt" x="515" y="283" font-size="16">Selenium WebDriver (Chrome)</text>
+
+  <!-- Outputs -->
+  <rect class="card" x="900" y="160" width="260" height="170" rx="16"/>
+  <text class="txt" x="930" y="205" font-size="22" font-weight="700">Artifacts</text>
+  <text class="muted" x="930" y="238" font-size="16">for debugging + proof</text>
+  <rect class="pill" x="930" y="258" width="200" height="40" rx="20"/>
+  <text class="txt" x="950" y="284" font-size="15">logs</text>
+  <rect class="pill" x="930" y="304" width="200" height="40" rx="20"/>
+  <text class="txt" x="950" y="330" font-size="15">screenshots</text>
+
+  <!-- Optional notifications -->
+  <rect class="card" x="460" y="390" width="700" height="160" rx="16"/>
+  <text class="txt" x="495" y="435" font-size="22" font-weight="700">Optional notifications</text>
+  <text class="muted" x="495" y="468" font-size="16">If a slot appears, you can alert yourself quickly.</text>
+  <rect class="pill" x="495" y="490" width="200" height="44" rx="22"/>
+  <text class="txt" x="515" y="518" font-size="16">email</text>
+  <rect class="pill" x="710" y="490" width="200" height="44" rx="22"/>
+  <text class="txt" x="730" y="518" font-size="16">push / SMS</text>
+  <rect class="pill" x="925" y="490" width="200" height="44" rx="22"/>
+  <text class="txt" x="945" y="518" font-size="16">telegram</text>
+
+  <!-- Arrows -->
+  <path class="stroke" d="M400 250 C430 250, 430 250, 455 250" marker-end="url(#arrow)"/>
+  <text class="accent" x="410" y="235" font-size="14" font-weight="700">triggers</text>
+
+  <path class="stroke" d="M840 250 C865 250, 865 250, 895 250" marker-end="url(#arrow)"/>
+  <text class="accent" x="850" y="235" font-size="14" font-weight="700">writes</text>
+
+  <path class="stroke" d="M650 350 C650 370, 650 370, 650 385" marker-end="url(#arrow)"/>
+  <text class="accent" x="662" y="372" font-size="14" font-weight="700">if success</text>
+</svg>
+
+

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-label="Selenium loop: code controls browser which drives website and returns DOM state">
+  <defs>
+    <style>
+      .bg{fill:#0b1220}
+      .card{fill:#0f1a2f;stroke:#1f2a44;stroke-width:2}
+      .txt{fill:#e5e7eb;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+      .muted{fill:#9ca3af}
+      .accent{fill:#60a5fa}
+      .stroke{stroke:#60a5fa;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .pill{fill:#111c33;stroke:#2b3a5d;stroke-width:2}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#60a5fa"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="520" rx="18"/>
+
+  <text class="txt" x="60" y="78" font-size="34" font-weight="700">How Selenium works (in one picture)</text>
+  <text class="muted" x="60" y="112" font-size="18">Your code drives a real browser, which drives a real website, and you react to what you see.</text>
+
+  <!-- Boxes -->
+  <rect class="card" x="70" y="170" width="320" height="220" rx="16"/>
+  <text class="txt" x="105" y="220" font-size="22" font-weight="700">Your code</text>
+  <text class="muted" x="105" y="255" font-size="16">Python + Selenium WebDriver</text>
+  <rect class="pill" x="105" y="285" width="250" height="42" rx="21"/>
+  <text class="txt" x="125" y="312" font-size="16">find element → click / type</text>
+  <rect class="pill" x="105" y="335" width="250" height="42" rx="21"/>
+  <text class="txt" x="125" y="362" font-size="16">wait → read page state</text>
+
+  <rect class="card" x="440" y="170" width="320" height="220" rx="16"/>
+  <text class="txt" x="475" y="220" font-size="22" font-weight="700">Browser</text>
+  <text class="muted" x="475" y="255" font-size="16">Chrome (headless or visible)</text>
+  <rect class="pill" x="475" y="285" width="250" height="42" rx="21"/>
+  <text class="txt" x="495" y="312" font-size="16">renders + runs JS</text>
+  <rect class="pill" x="475" y="335" width="250" height="42" rx="21"/>
+  <text class="txt" x="495" y="362" font-size="16">produces DOM + events</text>
+
+  <rect class="card" x="810" y="170" width="320" height="220" rx="16"/>
+  <text class="txt" x="845" y="220" font-size="22" font-weight="700">Website</text>
+  <text class="muted" x="845" y="255" font-size="16">prenotami.esteri.it (UI)</text>
+  <rect class="pill" x="845" y="285" width="250" height="42" rx="21"/>
+  <text class="txt" x="865" y="312" font-size="16">HTML/CSS/JS response</text>
+  <rect class="pill" x="845" y="335" width="250" height="42" rx="21"/>
+  <text class="txt" x="865" y="362" font-size="16">slots appear/disappear</text>
+
+  <!-- Arrows -->
+  <path class="stroke" d="M395 255 C420 255, 420 255, 435 255" marker-end="url(#arrow)"/>
+  <text class="accent" x="404" y="240" font-size="14" font-weight="700">commands</text>
+
+  <path class="stroke" d="M760 255 C785 255, 785 255, 805 255" marker-end="url(#arrow)"/>
+  <text class="accent" x="772" y="240" font-size="14" font-weight="700">requests</text>
+
+  <path class="stroke" d="M805 330 C785 330, 785 330, 760 330" marker-end="url(#arrow)"/>
+  <text class="accent" x="770" y="348" font-size="14" font-weight="700">DOM / UI state</text>
+
+  <path class="stroke" d="M435 330 C420 330, 420 330, 395 330" marker-end="url(#arrow)"/>
+  <text class="accent" x="402" y="348" font-size="14" font-weight="700">element data</text>
+</svg>
+
+

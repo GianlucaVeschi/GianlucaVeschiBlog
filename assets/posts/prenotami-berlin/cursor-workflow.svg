@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-label="Cursor-assisted workflow: describe intent, generate code, run, inspect, iterate">
+  <defs>
+    <style>
+      .bg{fill:#0b1220}
+      .card{fill:#0f1a2f;stroke:#1f2a44;stroke-width:2}
+      .txt{fill:#e5e7eb;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+      .muted{fill:#9ca3af}
+      .accent{fill:#60a5fa}
+      .stroke{stroke:#60a5fa;stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .step{fill:#111c33;stroke:#2b3a5d;stroke-width:2}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#60a5fa"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="520" rx="18"/>
+  <text class="txt" x="60" y="78" font-size="34" font-weight="700">How I used Cursor to ship the repo</text>
+  <text class="muted" x="60" y="112" font-size="18">Fast feedback loops beat perfect plans.</text>
+
+  <!-- Steps -->
+  <rect class="step" x="70" y="185" width="210" height="120" rx="16"/>
+  <text class="txt" x="95" y="230" font-size="18" font-weight="700">1) Intent</text>
+  <text class="muted" x="95" y="258" font-size="14">Describe goal + constraints</text>
+
+  <rect class="step" x="310" y="185" width="210" height="120" rx="16"/>
+  <text class="txt" x="335" y="230" font-size="18" font-weight="700">2) Generate</text>
+  <text class="muted" x="335" y="258" font-size="14">Draft code + docs</text>
+
+  <rect class="step" x="550" y="185" width="210" height="120" rx="16"/>
+  <text class="txt" x="575" y="230" font-size="18" font-weight="700">3) Run</text>
+  <text class="muted" x="575" y="258" font-size="14">Execute + observe UI</text>
+
+  <rect class="step" x="790" y="185" width="210" height="120" rx="16"/>
+  <text class="txt" x="815" y="230" font-size="18" font-weight="700">4) Inspect</text>
+  <text class="muted" x="815" y="258" font-size="14">Logs + screenshots</text>
+
+  <rect class="step" x="1030" y="185" width="140" height="120" rx="16"/>
+  <text class="txt" x="1055" y="230" font-size="18" font-weight="700">5) Iterate</text>
+  <text class="muted" x="1055" y="258" font-size="14">Fix selectors</text>
+
+  <!-- Arrows -->
+  <path class="stroke" d="M280 245 L305 245" marker-end="url(#arrow)"/>
+  <path class="stroke" d="M520 245 L545 245" marker-end="url(#arrow)"/>
+  <path class="stroke" d="M760 245 L785 245" marker-end="url(#arrow)"/>
+  <path class="stroke" d="M1000 245 L1025 245" marker-end="url(#arrow)"/>
+
+  <!-- Loop back -->
+  <path class="stroke" d="M1100 320 C1100 410, 190 410, 170 320" marker-end="url(#arrow)"/>
+  <text class="accent" x="520" y="435" font-size="14" font-weight="700">repeat until it works</text>
+</svg>
+
+
