@@ -4,10 +4,11 @@ title: About
 permalink: /about/
 ---
 
-Write your “about” here.
+About Me.
 
-- What you do
-- What you’re interested in
-- Where to find you
+- 1996
+- Berlin, Germany
+- Software Engineer
+- Fluent in Mandarin, German, Italian, English & Spanish.
 
 
