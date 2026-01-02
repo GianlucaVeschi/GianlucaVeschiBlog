@@ -114,12 +114,24 @@ a:hover { text-decoration: underline; }
 .footer-inner { display: flex; gap: 10px; align-items: center; justify-content: center; flex-wrap: wrap; }
 .footer a { color: var(--muted); }
 
+/* About avatar */
+.about-avatar-wrap { margin: 10px 0 18px; display: flex; justify-content: center; }
+.about-avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
 @media (max-width: 560px) {
   .nav-inner { flex-direction: column; align-items: flex-start; }
   /* Keep it tall but not overwhelming on mobile */
   .scrim { min-height: 360px; padding: 0 16px; }
   .site-header .title { font-size: 2.4rem; white-space: normal; }
   .site-header .subtitle { font-size: 1.2rem; }
+  .about-avatar { width: 140px; height: 140px; }
 }
 
 
