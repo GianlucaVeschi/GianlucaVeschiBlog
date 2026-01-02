@@ -38,9 +38,7 @@ There is no way on earth I am waking up so early for this, So I thought to mysel
 
  I shipped a small side project called **PrenotamiBerlin**: a bot that helps me grab an appointment slot on `prenotami.esteri.it` right when new availability drops (for Berlin, that’s **7:00 AM**).
 
-The fun part: I built it *fast* with **Cursor** by quickly iterating over my attempts.
-
-![Cursor-assisted workflow](/assets/posts/prenotami-berlin/cursor-workflow.svg)
+The fun part: I built it with **Cursor** by quickly iterating over my attempts.
 
 ## Selenium, explained without the fluff
 
