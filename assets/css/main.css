@@ -117,8 +117,8 @@ a:hover { text-decoration: underline; }
 /* About avatar */
 .about-avatar-wrap { margin: 10px 0 18px; display: flex; justify-content: center; }
 .about-avatar {
-  width: 180px;
-  height: 180px;
+  width: 220px;
+  height: 220px;
   border-radius: 999px;
   object-fit: cover;
   border: 1px solid var(--border);
@@ -131,7 +131,7 @@ a:hover { text-decoration: underline; }
   .scrim { min-height: 360px; padding: 0 16px; }
   .site-header .title { font-size: 2.4rem; white-space: normal; }
   .site-header .subtitle { font-size: 1.2rem; }
-  .about-avatar { width: 140px; height: 140px; }
+  .about-avatar { width: 170px; height: 170px; }
 }
 
 
