@@ -6,13 +6,15 @@ tags: [automation, selenium, python]
 
 ### Introduction (Skip me if you just want the nerd stuff)
 
-On a trip to Hong Kong In 2023 I decided to go for a solo walk in the outskirts of the Hill Kwun Yam Buddhist Temple. It was a beatiful day to explore the jungle around the city, and apparently also a very good one to lose my wallet.
+On a trip to **Hong Kong** In 2023 I decided to go for a solo walk in the outskirts of the Hill Kwun Yam Buddhist Temple. It was a beatiful day to explore the jungle around the city, and apparently also a very good one to lose my wallet.
 
 I have looked for it everywhere, and considering that Hong Kong has one of the [lowest crime rate of the world](https://www.macrotrends.net/global-metrics/countries/hkg/hong-kong/crime-rate-statistics), I excluded the fact that someone had stolen it from me. 
 
 Most of my cards and my Italian ID were gone, but luckily I still had my passport and a Revolut card in my backpack, so I could keep roaming around in Asia for a few more weeks.
 
 As soon as I arrived in Italy, I booked an appointment to renew my ID card, and since my official residency is in Berlin, I could only get a "Paper ID Card". Something that looks like straight from the 80s.
+
+![BlurredId](/assets/posts/prenotami-berlin/blurred.png)
 
 I liked having it around me and having the occasional foreigner laughing at me for the looks of it, but Italy has recently introduced a law for which we all have to get a digital ID card, and for me, this meant booking an appointment at the embassy of Berlin to book a renewal. 
 
@@ -36,19 +38,9 @@ There is no way on earth I am waking up so early for this, So I thought to mysel
 
  I shipped a small side project called **PrenotamiBerlin**: a bot that helps me grab an appointment slot on `prenotami.esteri.it` right when new availability drops (for Berlin, that’s **7:00 AM**).
 
-The fun part: I built it *fast* with **Cursor** by iterating in tight loops—write intent, generate code, run it, inspect screenshots/logs, fix the selectors, repeat.
+The fun part: I built it *fast* with **Cursor** by quickly iterating over my attempts.
 
 ![Cursor-assisted workflow](/assets/posts/prenotami-berlin/cursor-workflow.svg)
-
-## What the bot does (high level)
-
-The repository is basically:
-
-- **`prenotami_bot.py`**: open Chrome, login, click “Prenota”, click “PRENOTA”, check for slots, optionally fill the form and confirm.
-- **`scheduler.py`**: run the bot at the right time (07:00), every day.
-- **logs + screenshots**: every run leaves a paper trail so you can debug what happened.
-
-![Bot architecture](/assets/posts/prenotami-berlin/bot-architecture.svg)
 
 ## Selenium, explained without the fluff
 
@@ -64,19 +56,59 @@ That’s the key idea:
 
 ![Selenium loop](/assets/posts/prenotami-berlin/selenium-loop.svg)
 
-### The 3 Selenium concepts that matter most
+## What the bot does (high level)
 
-- **Selectors**: how you find elements.
-  - Common options: `By.ID`, `By.CSS_SELECTOR`, `By.XPATH`, `By.LINK_TEXT`.
-  - Real-world automation is mostly “keep selectors up-to-date as the website changes”.
+I first started exploring the website of https://prenotami.esteri.it/. Here there is a simple form to input Username and password. So I first told the bot to write a script to navigate to the browser and type my information, which was previously written into a local file.
 
-- **Waits**: most Selenium flakiness comes from clicking too early.
-  - Prefer **explicit waits** (`WebDriverWait` + expected conditions) over `time.sleep`.
-  - In the bot I still use a mix, because some steps are more stable with a small fixed delay.
+![Homepage 1](/assets/posts/prenotami-berlin/homepage-1.png)
 
-- **Headless vs visible browser**:
-  - Headless is great for cron/server runs.
-  - Visible is best while developing/debugging.
+Cursor was able to do everything with a simple prompt. Next, I moved on to navigating through the appointment request process, instructing Cursor to automate the necessary clicks using Selenium.
+
+My manual progress hit a **roadblock** when the site displayed a banner stating there were no available appointments. Since I couldn’t proceed further, I had no idea what the next page’s UI looked like.
+
+To get around this, I scheduled the bot to run at 7 AM sharp—just as new slots were expected to open—and set it up to **take screenshots** at each step.
+
+I went to bed with a cron job running. After the first automated attempt, I woke up to find the bot’s screenshot of the page I hadn’t been able to reach before. **It felt a bit like unlocking a new level in a video game**.
+
+![Homepage 2](/assets/posts/prenotami-berlin/homepage-2.png)
+
+After a few rounds of trial and error, I finally saw the final UI, which included a calendar and a confirmation panel.
+
+Three days and several attempts later, I successfully booked my appointment and received a confirmation email. All without having to wake up early!
+
+
+Here is a snippet of the code
+
+```python
+def navigate_to_booking(self):
+    """Navigate to the booking section"""
+
+    try:
+        logger.info("Looking for 'Prenota' tab...")
+
+        # Wait a bit for the page to fully load
+        time.sleep(2)
+
+        # Look for the "Prenota" tab (third tab) - it's a link
+        prenota_tab = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable((By.LINK_TEXT, "Prenota"))
+        )
+
+        logger.info("Found 'Prenota' tab, clicking...")
+        prenota_tab.click()
+        time.sleep(2)
+
+        logger.info("✓ Navigated to booking section")
+        return True
+```        
+
+The repository is basically:
+
+- **`prenotami_bot.py`**: open Chrome, login, click “Prenota”, click “PRENOTA”, check for slots, optionally fill the form and confirm.
+- **`scheduler.py`**: run the bot at the right time (07:00), every day.
+- **logs + screenshots**: every run leaves a paper trail so you can debug what happened.
+
+![Bot architecture](/assets/posts/prenotami-berlin/bot-architecture.svg)
 
 ## What you can do with Selenium (beyond booking slots)
 
@@ -90,19 +122,16 @@ Selenium is a “browser automation hammer”. Some legitimate use cases:
 
 ## Practical notes (the stuff you learn the hard way)
 
-- **CAPTCHAs change everything**: once CAPTCHAs enter the flow, fully automated booking usually becomes “semi-automated”.
-- **Be kind to servers**: use rate limits, backoff, and avoid hammering endpoints.
+- **CAPTCHAs change everything**: once CAPTCHAs enter the flow, fully automated booking usually becomes harder.
 - **Don’t skip screenshots/logging**: they’re the fastest way to understand failures.
-- **Terms of service**: always consider whether automation is allowed for the site you’re interacting with.
 
-## What’s next
+## The end
 
-If I keep iterating on PrenotamiBerlin, I’d likely add:
-
-- Better **selectors** (more robust, fewer XPaths)
-- A clean **notification** path (email/push) on “slot found”
-- Retries at **07:00 + a few minutes** to handle transient failures
-
-If you’re reading this and thinking “I should automate that annoying website too”, you probably can—with one condition: treat it like a product. Observe, iterate, and keep it reliable.
+In a more advanced scenario, you would have to check with HTTP calls are triggered by the website instead of relying on their UI. That is, If the embassy decides to change the position of their CTAs, my bot would fail and I would have to readjust it, but if you have a simple similar scenario, just give it a try.  You might be surprised :)
 
 
+You can find all the related code [here](https://github.com/GianlucaVeschi/PrenotamiBerlin) in my Github. 
+
+Thanks for reading
+
+Gianluca - January 2026
