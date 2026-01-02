@@ -6,7 +6,7 @@ tags: [automation, selenium, python]
 
 ### Introduction (Skip me if you just want the nerd stuff)
 
-On a trip to **Hong Kong** in 2023, I decided to go for a solo walk on the outskirts of the Hill Kwun Yam Buddhist Temple. It was a beautiful day to explore the jungle around the city—and apparently also a very good one to lose my wallet.
+On a trip to **Hong Kong** in 2023, I decided to go for a solo walk on the outskirts of the Hill Kwun Yam Buddhist Temple. It was a beautiful day to explore the jungle around the city, and apparently also a very good one to lose my wallet.
 
 ![hk](/assets/posts/prenotami-berlin/hk.png)
 
@@ -14,7 +14,7 @@ I looked for it everywhere, and considering that Hong Kong has one of the [lowes
 
 Most of my cards and my Italian ID were gone, but luckily I still had my passport and a Revolut card in my backpack, so I could keep roaming around in Asia for a few more weeks.
 
-As soon as I arrived in Italy, I booked an appointment to renew my ID card. But since my official residency is in Berlin, I could only get a “paper ID card”—something that looks like it’s straight from the 80s.
+As soon as I arrived in Italy, I booked an appointment to renew my ID card. But since my official residency is in Berlin, I could only get a “paper ID card”, something that looks like it’s straight from the 80s.
 
 ![BlurredId](/assets/posts/prenotami-berlin/blurred.png)
 
@@ -66,7 +66,7 @@ Cursor handled it with a simple prompt. Next, I moved on to navigating through t
 
 My manual progress hit a **roadblock** when the site displayed a banner stating there were no available appointments. Since I couldn’t proceed further, I had no idea what the next page’s UI looked like.
 
-To get around this, I scheduled the bot to run at **7:00 AM** sharp—just as new slots were expected to open—and set it up to **take screenshots** at each step.
+To get around this, I scheduled the bot to run at **7:00 AM** sharp, just as new slots were expected to open, and set it up to **take screenshots** at each step.
 
 I went to bed with a cron job running. After the first automated attempt, I woke up to find the bot’s screenshot of the page I hadn’t been able to reach before. **It felt a bit like unlocking a new level in a video game.**
 
@@ -127,7 +127,7 @@ Selenium is a “browser automation hammer”. Some legitimate use cases:
 
 ## The end
 
-In a more advanced scenario, you’d inspect which HTTP calls are triggered by the website instead of relying on the UI. If the embassy changes the position of their CTAs, my bot would fail and I’d have to adjust it—but if you have a similar, simple scenario, just give it a try. You might be surprised :)
+In a more advanced scenario, you’d inspect which HTTP calls are triggered by the website instead of relying on the UI. If the embassy changes the position of their CTAs, my bot would fail and I’d have to adjust it, but if you have a similar, simple scenario, just give it a try. You might be surprised :)
 
 
 You can find all the related code [here](https://github.com/GianlucaVeschi/PrenotamiBerlin) on my GitHub.
