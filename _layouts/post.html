@@ -6,7 +6,15 @@ layout: default
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
     <p class="post-meta">
+      {%- comment -%}
+      Reading time (approx): count words from rendered HTML, divide by 200 wpm, round up.
+      {%- endcomment -%}
+      {%- assign words = content | strip_html | strip_newlines | replace: '  ', ' ' | split: ' ' | size -%}
+      {%- assign minutes = words | plus: 199 | divided_by: 200 -%}
+
       <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      <span class="sep">·</span>
+      <span class="reading-time">{{ minutes }} min read</span>
       {%- if page.tags and page.tags.size > 0 -%}
         <span class="sep">·</span>
         <span class="tags">
