@@ -5,6 +5,11 @@ url: "https://www.gianlucaveschi.com"
 baseurl: ""
 timezone: Europe/Rome
 
+# Analytics (Google Analytics 4)
+# Set this to your GA4 Measurement ID (format: "G-XXXXXXXXXX").
+# The tracking script is injected only when building in production.
+ga_measurement_id: "G-X59W25ZJ41"
+
 # Build
 markdown: kramdown
 permalink: /:categories/:title/
