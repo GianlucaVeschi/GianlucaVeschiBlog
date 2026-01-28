@@ -1,5 +1,7 @@
 # Gianluca Veschi Blog (Jekyll)
 
+A personal blog featuring reflections on software engineering, personal growth, and life. Built with Jekyll and deployed to GitHub Pages, this site powers www.gianlucaveschi.com.
+
 ## Run locally
 
 From this repo root:
@@ -48,5 +50,3 @@ Create files in `_posts/` named like:
 
 You can export pages from Notion as Markdown and place them into `_posts/`.
 We'll add an importer script later to automate this.
-
-
