@@ -2,9 +2,21 @@
 layout: default
 ---
 
+{%- if page.image -%}
+<div class="post-header-image" style="background-image: url({{ page.image }});">
+  <div class="scrim has-cover">
+    <div class="post-header-overlay">
+      <h1 class="post-title-overlay">{{ page.title }}</h1>
+    </div>
+  </div>
+</div>
+{%- endif -%}
+
 <article class="post">
   <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
+    {%- unless page.image -%}
+      <h1 class="post-title">{{ page.title }}</h1>
+    {%- endunless -%}
     <p class="post-meta">
       {%- comment -%}
       Reading time (approx): count words from rendered HTML, divide by 200 wpm, round up.

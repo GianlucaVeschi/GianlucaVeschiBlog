@@ -1,7 +1,9 @@
 ---
 title: "From Fintech to Marketplace: Reflections on becoming a Fullstack Software Engineer"
 date: 2026-03-02 09:00:00 +0100
-tags: [tag1, tag2, tag3]
+tags: [career, engineering, travel]
+image: https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80
+# Photo by Ivana Cajina on Unsplash - Mountain landscape
 ---
 
 # From Fintech to Marketplace: Reflections on becoming a Fullstack Software Engineer

@@ -2,6 +2,8 @@
 title: "Building PrenotamiBerlin with Cursor: a tiny Selenium bot that books for you"
 date: 2025-12-30 09:00:00 +0100
 tags: [automation, selenium, python]
+image: https://images.unsplash.com/photo-1560930950-5cc20e80e392?w=1600&q=80
+# Photo by Florian Wehde on Unsplash - Berlin TV Tower at sunset
 ---
 
 ### Introduction (Skip me if you just want the nerd stuff)
