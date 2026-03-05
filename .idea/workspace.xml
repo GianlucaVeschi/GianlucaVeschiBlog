@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e922e42-edd3-4de4-9fb4-b73095db9c2f" name="Changes" comment="Create first draft of one year at GYG">
-      <change beforePath="$PROJECT_DIR$/_layouts/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2025-12-29-welcome.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2025-12-29-welcome.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2025-12-30-prenotami-berlin-with-cursor.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2025-12-30-prenotami-berlin-with-cursor.md" afterDir="false" />
+    <list default="true" id="3e922e42-edd3-4de4-9fb4-b73095db9c2f" name="Changes" comment="Add Images and restore IntelliJ">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_posts/2026-03-02-one-year-at-getyourguide.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2026-03-02-one-year-at-getyourguide.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,19 +16,77 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/GianlucaVeschi/GianlucaVeschiBlog.git",
-    "accountId": "2dc1658a-4898-4818-848c-cd59a571b34a"
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "GianlucaVeschi"
   }
 }]]></component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/GianlucaVeschi/GianlucaVeschiBlog.git&quot;,
+    &quot;accountId&quot;: &quot;2dc1658a-4898-4818-848c-cd59a571b34a&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="3AXoMpeQnrNKG69diZsynHWIF8i" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
-    "javascript.preferred.runtime.type.id": "node"
+    "javascript.preferred.runtime.type.id": "node",
+    "junie.onboarding.icon.badge.shown": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.30387.83" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Add Images and restore IntelliJ">
+      <option name="closed" value="true" />
+      <created>1772488733932</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1772488733933</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3e922e42-edd3-4de4-9fb4-b73095db9c2f" name="Changes" comment="Add Images and restore IntelliJ" />
+      <created>1772748231490</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1772748231490</updated>
+      <workItem from="1772748232575" duration="621000" />
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add Images and restore IntelliJ" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Images and restore IntelliJ" />
   </component>
 </project>

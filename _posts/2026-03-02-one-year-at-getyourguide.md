@@ -58,7 +58,24 @@ At Qonto, we were building for freelancers and companies who often had clear nee
 could be more about execution and refinement. In a marketplace, uncertainty is higher, so the development loop tends to
 be more exploratory. That’s one of the big differences I’ve felt between fintech and an online marketplace.
 
-## The second mindshift: the generalist software engineer
+## The second mindshift: metrics over features
+
+When I first interviewed with GetYourGuide, I was surprised by how many questions focused on how we measure whether
+features perform well over time. In a B2B fintech environment, you still track adoption and usage to confirm you’re
+solving real problems—but when you build something like a taxation tool for Spanish freelancers who must pay IRPF,
+it’s relatively predictable that the feature will be used once it exists.
+
+In an online marketplace, the questions skew more toward **commercial and funnel metrics**: what is the gross
+merchandise volume (GMV) influenced by this landing page? How does conversion change for a campaign targeting
+travelers in Italy? The goal is less about delivering a “required” capability and more about learning what increases
+the likelihood of a booking—while still protecting trust, clarity, and a smooth user journey.
+
+This is a different mindset from the first one. You’re not just shipping functionality to meet a defined need; you’re
+optimizing for intent and outcomes in a business model where revenue is tied to transactions rather than subscriptions.
+That shift changes what you prioritize as an engineer: impact is often framed in measurable movement of key metrics,
+not only in the presence of new features.
+
+## The third mindshift: the generalist software engineer
 
 When building a mobile application, you need a lot of mobile development effort early on. UI flows for sign-in,
 registration, navigation, settings, and so on. As a product matures, some areas stabilize, and the work shifts toward
