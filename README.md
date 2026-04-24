@@ -50,3 +50,19 @@ Create files in `_posts/` named like:
 
 You can export pages from Notion as Markdown and place them into `_posts/`.
 We'll add an importer script later to automate this.
+
+## Comments
+
+The site includes a no-login comments section for posts. Because this is a static Jekyll site, public comments need an external store; the implementation uses Supabase with public read/insert policies and client-side validation.
+
+1. Create a Supabase project.
+2. In the Supabase SQL editor, run [`supabase/comments.sql`](./supabase/comments.sql).
+3. Copy your project URL and anon key into `comments.supabase.url` and `comments.supabase.anon_key` in [`_config.yml`](./_config.yml).
+4. Set `comments.enabled: true` in [`_config.yml`](./_config.yml).
+
+Notes:
+
+- On `localhost`, if Supabase is not configured yet, the form falls back to `localStorage` so you can preview the UI without a backend.
+- The current limits are `40` characters for the name and `500` for the comment body.
+- Add `comments: false` in a post front matter block if you want to hide comments on a specific post.
+- Public no-login comments can attract spam. This implementation includes a honeypot field plus database-side length checks, but heavier moderation/rate-limiting would need a small server-side layer later.

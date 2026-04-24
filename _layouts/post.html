@@ -43,4 +43,84 @@ layout: default
   </div>
 </article>
 
+{%- assign comments_enabled = site.comments.enabled | default: false -%}
+{%- if comments_enabled and page.comments != false -%}
+<section
+  class="comments"
+  id="comments"
+  data-comments-enabled="true"
+  data-comments-post-path="{{ page.url | escape }}"
+  data-comments-post-title="{{ page.title | escape }}"
+  data-comments-max-name="{{ site.comments.max_name_length | default: 40 }}"
+  data-comments-max-comment="{{ site.comments.max_comment_length | default: 500 }}"
+  data-comments-max-comments="{{ site.comments.max_comments | default: 50 }}"
+  data-comments-supabase-url="{{ site.comments.supabase.url | escape }}"
+  data-comments-supabase-anon-key="{{ site.comments.supabase.anon_key | escape }}"
+>
+  <div class="comments-card">
+    <div class="comments-intro">
+      <p class="comments-eyebrow">Comments</p>
+      <h2 class="comments-title">Add your take</h2>
+      <p class="comments-copy">No account needed. Just add your name and a short comment.</p>
+      <p class="comments-preview-note" hidden>Local preview mode: comments stay only in this browser.</p>
+    </div>
+
+    <form class="comment-form" novalidate>
+      <label class="comment-field" for="comment-name">
+        <span class="comment-label">Name</span>
+        <input
+          class="comment-input"
+          id="comment-name"
+          name="name"
+          type="text"
+          autocomplete="name"
+          maxlength="{{ site.comments.max_name_length | default: 40 }}"
+          placeholder="Your name"
+          required
+        />
+      </label>
+
+      <label class="comment-field" for="comment-text">
+        <span class="comment-label">Comment</span>
+        <textarea
+          class="comment-input comment-textarea"
+          id="comment-text"
+          name="comment"
+          maxlength="{{ site.comments.max_comment_length | default: 500 }}"
+          placeholder="What did you think?"
+          required
+        ></textarea>
+      </label>
+
+      <div class="comment-form-meta">
+        <p class="comment-hint">{{ site.comments.max_comment_length | default: 500 }} characters max. Keep it respectful.</p>
+        <span class="comment-counter" data-comment-counter>0/{{ site.comments.max_comment_length | default: 500 }}</span>
+      </div>
+
+      <div class="comment-honeypot" aria-hidden="true">
+        <label for="comment-website">Website</label>
+        <input id="comment-website" name="website" type="text" autocomplete="off" tabindex="-1" />
+      </div>
+
+      <div class="comment-submit-row">
+        <button class="comment-button" type="submit">Post comment</button>
+        <p class="comment-status" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+
+    <div class="comments-list-shell">
+      <div class="comments-list-header">
+        <h3 class="comments-list-title">Latest comments</h3>
+        <p class="comments-list-meta" data-comments-count></p>
+      </div>
+      <p class="comments-loading">Loading comments...</p>
+      <p class="comments-empty" hidden>No comments yet. Be the first one.</p>
+      <p class="comments-error" hidden>Comments are unavailable right now.</p>
+      <ol class="comments-list" hidden></ol>
+    </div>
+  </div>
+</section>
+
+<script type="module" src="{{ '/assets/js/comments.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+{%- endif -%}
 

@@ -10,6 +10,19 @@ timezone: Europe/Rome
 # The tracking script is injected only when building in production.
 ga_measurement_id: "G-X59W25ZJ41"
 
+# No-login comments for post pages.
+# This uses Supabase because the site is static and needs a public data store.
+# Set `enabled: true` after you create the table/policies in `supabase/comments.sql`
+# and fill the public project URL + anon key below.
+comments:
+  enabled: false
+  max_name_length: 40
+  max_comment_length: 500
+  max_comments: 50
+  supabase:
+    url: ""
+    anon_key: ""
+
 # Build
 markdown: kramdown
 permalink: /:categories/:title/
@@ -50,5 +63,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - scripts
-
 
